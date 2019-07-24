@@ -19,6 +19,7 @@ Route::get('/home', function () {
 });
 //Route::get('course/present', 'CourseController@present')->name('course.present');
 //Route::get('user/create', 'UserController@create')->name('user.create');
+Route::post('/user/store', 'UserController@store');
 Route::get('/user/create', 'UserController@create')->name('user.create');
 /*Route::post('/user/create', function () {
     return view('user.create');

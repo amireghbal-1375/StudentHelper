@@ -15,7 +15,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
             'company',
             // add all other fields
         ];
-
         /**
          * The attributes that should be hidden for arrays.
          *

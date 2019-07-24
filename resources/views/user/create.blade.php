@@ -15,35 +15,42 @@
 </head>
 <body>
     <div class="container">
-        <form action="" method="get">
-            {{csrf_field()}}
-            <div class="form-group">
-                <label for="name">نام:</label>
-                <input type="name" class="form-control" id="name" value="{{old('name', isset($userItem)? $userItem->name : '')}}">
-            </div>
-            <div class="form-group">
-                <label for="family">نام خانوادگی:</label>
-                <input type="family" class="form-control" id="family" value="{{old('family', isset($userItem)? $userItem->family : '')}}">
-            </div>
-            <div class="form-group">
-                <label for="email">ایمیل:</label>
-                <input type="email" class="form-control" id="email" value="{{old('email', isset($userItem)? $userItem->email : '')}}">
-            </div>
-            <div class="form-group">
-                <label for="phone">شماره تلفن:</label>
-                <input type="phone" class="form-control" id="phone" {{old('phone_number', isset($userItem)? $userItem->phone_number : '')}}>
-            </div>
-            <div class="form-group">
-                <label for="password">رمز عبور:</label>
-                <input type="password" class="form-control" id="password" value="{{old('password', isset($userItem)? $userItem->password : '')}}">
-            </div>
-            <label for="type">نقش کاربر:</label>
-            <select name="type" id="type" class="form-control">
-                <option value="0" {{ isset($userItem) && $userItem->type == 0 ? 'selected': '' }}>دانشجو</option>
-                <option value="1" {{ isset($userItem) && $userItem->type == 1? 'selected': '' }}>استاد</option>
-            </select>
-            <br/>
-            <button type="submit" class="btn btn-primary">ثبت</button>
+        <form action = "/user/store" method = "post">
+            <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
+            <table>
+                <tr>
+                    <td>نام:</td>
+                    <td><input type='text' name='name' /></td>
+                <tr>
+                    <td>نام خانوادگی:</td>
+                    <td><input type="text" name='family'/></td>
+                </tr>
+                <tr>
+                    <td>ایمیل:</td>
+                    <td><input type="text" name='email'/></td>
+                </tr>
+                <tr>
+                    <td>شماره تلفن:</td>
+                    <td><input type="text" name='phone_number'/></td>
+                </tr>
+                <tr>
+                    <td>رمز عبور:</td>
+                    <td><input type="text" name='password'/></td>
+                </tr>
+                <tr>
+                    <td>نوع کاربر:</td>
+                    <td>
+                        <select name="type">
+                            <option value="student">دانشجو</option>
+                            <option value="teacher">استاد</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td colspan = '2'>
+                        <input type = 'submit' value = "افزودن"/>
+                    </td>
+                </tr>
+            </table>
         </form>
     </div>
 </body>
