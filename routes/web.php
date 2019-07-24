@@ -17,5 +17,9 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('index');
 });
-Route::get('course/present', 'CourseController@present')->name('course.present');
-Route::get('user/create', 'UserController@create')->name('user.create');
+//Route::get('course/present', 'CourseController@present')->name('course.present');
+//Route::get('user/create', 'UserController@create')->name('user.create');
+Route::get('/user/create', 'UserController@create')->name('user.create');
+/*Route::post('/user/create', function () {
+    return view('user.create');
+});*/

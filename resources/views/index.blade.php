@@ -27,7 +27,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">لیست کاربران</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">ثبت کاربر جدید</a>
+                        <a class="dropdown-item" href="{{route('user.create')}}">ثبت کاربر جدید</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
